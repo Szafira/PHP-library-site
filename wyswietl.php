@@ -39,16 +39,18 @@
             <td><input type="submit" name="szukane" value="Wyślij formularz"></td>
           </tr>
           </form>
-                  
-         
+
         </tresc>
         
         
+         
 <?php
-   
+
+  
   include 'src/polaczenie.php';
   include 'src/curlSetup.php';
-
+  
+  
 ?>
     
 

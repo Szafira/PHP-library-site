@@ -50,11 +50,11 @@
   <td> </td>
   <td><input type="submit" name="wyslij" value="Wyślij formularz"></td>
 </tr>
+<input type="submit" name="wyloguj" value="Wyloguj" action="post"></td>
 </form>
-</table>
-<input type="submit" name="wyloguj" value="wyloguj"></td>
 
-     
+</table>
+         
         </div>
     
 
@@ -62,19 +62,20 @@
 </html>
 
 <?php
-if(isset($_POST['wyloguj']))
-{ session_unset(); }
-else{
 session_start();
+if(isset($_POST['wyloguj']))
+{ session_unset(); 
+echo "Zaloguj się!";
+}
+else{
 
 
 if(isset($_SESSION['zalogowany'])){
-   echo "Jesteś zalogowany";
+   echo "Jesteś zalogowany<br>";
    include 'src/polaczenie.php';
    include 'src/dodajKsiazki.php';
 } else {
   echo "Zaloguj się!";
- 
 }
-}?>
-
+}
+?>

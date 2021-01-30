@@ -1,3 +1,4 @@
+
 <?php
 
 include "polaczenie.php"; 
@@ -16,6 +17,6 @@ else
     echo "błąd przy usuwaniu";
 
 }
-  
 
-?>
+
+?> 

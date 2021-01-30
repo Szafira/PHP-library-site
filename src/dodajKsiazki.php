@@ -1,10 +1,5 @@
 <?php
 
-if(!isset($_SESSION['zalogowany'])){
-    header('Location: login.php');
-    exit;
-} else {
- 
 
   $nazwaserwera = 'localhost';
   $nazwauzytkownika = 'normalUser';
@@ -41,7 +36,7 @@ if ($blad == 0)
   
 {
   if ($polaczenie->query($zapytanie) === TRUE) {
-    echo "Pomyślnie dodano do bazy";
+    echo "Pomyślnie dodano do bazy<br>";
   } else {
   echo "Nie udało się dodać do bazy, błąd: " . $zapytanie . "<br>" . $polaczenie->connect_error;
   }
@@ -53,13 +48,13 @@ $wyniki= mysqli_query($polaczenie,$odczytBazy);
 
 while($row = mysqli_fetch_assoc($wyniki)) {
   
-  echo "Tytuł:" . $row['title'] ." Autor: " . $row['author']." Status: ".$row['stats']."  ". $row['toRead']."<br>";
+  echo "<br>Tytuł:" . $row['title'] ." Autor: " . $row['author']." Status: ".$row['stats']."  ". $row['toRead'];
   ?>
   
-  <td><a href="src/buttons/delete.php?id=<?php echo $row['ID'] ?>">Delete</a></td>
+  <td><a href="src/delete.php?id=<?php echo $row['ID'] ?>">Delete</a></td>
 
 <?php
 }
-}
+
 
 ?>
