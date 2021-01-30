@@ -18,9 +18,6 @@
         </div>
 
    
-   
-   <!-- <div class="tresclewa"> lewo </div>
-    <div class="trescprawa"> prawo </div> */ -->
-
+ 
   </body>
 </html>

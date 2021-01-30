@@ -10,4 +10,5 @@
        die("Nastąpił błąd połączenia z bazą: " . $polaczenie->connect_error);
      } 
 
+     
 ?>

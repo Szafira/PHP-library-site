@@ -52,7 +52,9 @@
 </tr>
 </form>
 </table>
-         
+<input type="submit" name="wyloguj" value="wyloguj"></td>
+
+     
         </div>
     
 
@@ -60,6 +62,19 @@
 </html>
 
 <?php
-  include 'src/polaczenie.php';
-  include 'src/dodajKsiazki.php';
-?>
+if(isset($_POST['wyloguj']))
+{ session_unset(); }
+else{
+session_start();
+
+
+if(isset($_SESSION['zalogowany'])){
+   echo "Jesteś zalogowany";
+   include 'src/polaczenie.php';
+   include 'src/dodajKsiazki.php';
+} else {
+  echo "Zaloguj się!";
+ 
+}
+}?>
+

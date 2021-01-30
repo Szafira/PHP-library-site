@@ -1,5 +1,6 @@
 <?php
-if (isset($_POST['zaloguj'])) 
+session_start();
+  if (isset($_POST['zaloguj'])) 
   {
     $email = $_POST['login'];
     $haslo1 = $_POST['haslo1'];
@@ -17,18 +18,22 @@ if (isset($_POST['zaloguj']))
 
     if($bledy[0]= 1 && $bledy[1]=1)
     {
-      echo "Test przed połączeniem<br>";
+  
       $haslo1 = md5($haslo1);
-      echo $haslo1."<br>";
+
       $zapytanie= "SELECT * FROM users WHERE email='$email' AND psswd='$haslo1'";
       $wynik = $polaczenie->query($zapytanie);
+      
       if ($wynik->num_rows >0){
-
-          $_SESSION['email'] = $email;
-          $_SESSION['logowanie'] = "Jesteś zalogowany";}
+        $row = mysqli_fetch_assoc($wynik);
+        $_SESSION['zalogowany'] =$row['ID'];
+      }
 
         else
         { echo "Niepoprawne hasło lub email"; }
+
+         
    }
 }
+
    ?>

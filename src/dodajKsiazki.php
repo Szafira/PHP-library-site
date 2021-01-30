@@ -1,5 +1,11 @@
 <?php
 
+if(!isset($_SESSION['zalogowany'])){
+    header('Location: login.php');
+    exit;
+} else {
+ 
+
   $nazwaserwera = 'localhost';
   $nazwauzytkownika = 'normalUser';
   $haslobazy = 'user';
@@ -51,7 +57,9 @@ while($row = mysqli_fetch_assoc($wyniki)) {
   ?>
   
   <td><a href="src/buttons/delete.php?id=<?php echo $row['ID'] ?>">Delete</a></td>
-  <td><a href="src/buttons/edit.php?id=<?php echo $row['ID'] ?>">Edytuj</a></td>
+
 <?php
 }
+}
+
 ?>
